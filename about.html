@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="jpg" href="garasidigital.png">
+    <title>Garasi Digital - Tentang Kami</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .about-text h3 {
+            margin-top: 1rem;
+            color: var(--color-text);
+        }
+        .about-image {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .about-image:hover img {
+            transform: scale(1.05); 
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="luxe-header">
+        <div class="container">
+            <h1 class="logo">GARASI DIGITAL</h1>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="product.html" class="nav-link">Product</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section id="about" class="page-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Garasi Digital</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Filosofi Kami</h3>
+                        <p>Garasi Digital lahir dari ambisi untuk menyatukan teknologi canggih dengan desain yang tak lekang oleh waktu. Kami percaya bahwa produk digital haruslah fungsional sekaligus menjadi ekspresi kemewahan dan selera tinggi.</p>
+                        <h3>Kualitas & Keberlanjutan</h3>
+                        <p>Setiap produk di Garasi Digital melalui kurasi ketat, memastikan kualitas premium dan umur panjang. Kami berkomitmen pada praktik berkelanjutan, menjadikan kemewahan sebagai tanggung jawab.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="garasidigital.png" alt="Garasi Digital" >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <footer class="luxe-footer">
+    <div class="container">
+         <p>Create by : Muhamad Miril Januarli.</p>
+        <p>&copy; 2024 Garasi Digital. Hak Dilindungi</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

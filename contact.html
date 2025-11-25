@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="jpg" href="garasidigital.png">
+    <title>Garasi Digital - Kontak</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            padding: 2rem 0;
+        }
+        .contact-info h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 122, 101, 0.3);
+        }
+
+        @media (max-width: 992px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="luxe-header">
+        <div class="container">
+            <h1 class="logo">GARASI DIGITAL</h1>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="product.html" class="nav-link">Product</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section id="contact" class="page-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Hubungi Layanan Kami</h2>
+                <div class="contact-layout">
+                    <div class="contact-form">
+                        <form>
+                            <input type="text" placeholder="Nama Lengkap" required>
+                            <input type="email" placeholder="Alamat Email" required>
+                            <textarea placeholder="Pesan Anda" rows="6" required></textarea>
+                            <button type="submit" class="luxe-button">Kirim Pesan</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Informasi Kantor Pusat</h3>
+                        <p>Jl.Menteng raya No. 16, Jakarta Pusat</p>
+                        <p>Indonesia, 10110</p>
+                        <br>
+                        <h3>Kontak Cepat</h3>
+                        <p>Email: <a href="miriljanuarli05@gmail.com" style="color: var(--color-primary);">miriljanuarli05@gmail.com</a></p>
+                        <p>Telepon: +62 858-1026-6900</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="luxe-footer">
+    <div class="container">
+         <p>Create by : Muhamad Miril Januarli.</p>
+        <p>&copy; 2024 Garasi Digital. Hak Dilindungi</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

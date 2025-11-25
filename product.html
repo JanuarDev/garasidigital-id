@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="jpg" href="garasidigital.png">
+    <title>Garasi Digital - Produk</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 1.5rem;
+            display: flex; 
+            flex-direction: column;
+        }
+        .product-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .product-card h3 {
+            color: var(--color-primary);
+            margin: 0.5rem 0;
+        }
+        .product-card p {
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+        .product-actions {
+            margin-top: auto; 
+        }
+
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1001; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6); 
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%; 
+            max-width: 700px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: modalopen 0.4s;
+        }
+
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover, .close-btn:focus {
+            color: var(--color-primary);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart-items li {
+            border-bottom: 1px dashed #eee;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .remove-item {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .cart-icon {
+             cursor: pointer;
+             font-size: 1.5rem;
+             color: var(--color-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="luxe-header">
+        <div class="container">
+            <h1 class="logo">GARASI DIGITAL</h1>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="product.html" class="nav-link active">Product</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><span class="cart-icon" id="open-cart-btn">🛒 <span id="cart-count">(0)</span></span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section id="products" class="page-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Produk Teratas</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-id="1" data-name="Drone Aero Elite" data-price="15000000">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9cp4eMVefadyRKsnAF9b-vmSgcHinaugtUw&s" alt="Produk 1">
+                        <h3>Drone Aero Elite</h3>
+                        <p>Rp 15.000.000</p>
+                        <div class="product-actions">
+                             <button class="luxe-button add-to-cart">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="2" data-name="Smartwatch Luxe" data-price="5200000">
+                        <img src="https://www.pebblecart.com/cdn/shop/products/ForestGreen.jpg?v=1672399002&width=1000" alt="Produk 2">
+                        <h3>Smartwatch Luxe</h3>
+                        <p>Rp 5.200.000</p>
+                        <div class="product-actions">
+                            <button class="luxe-button add-to-cart">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                     <div class="product-card" data-id="3" data-name="Headphone Emerald" data-price="3500000">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb90W6gv5KlRrEyQGHa5FhrsttYlna2LVVTw&s" alt="Produk 3">
+                        <h3>Headphone Logitech</h3>
+                        <p>Rp 3.500.000</p>
+                        <div class="product-actions">
+                            <button class="luxe-button add-to-cart">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </section>
+    </main>
+    
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">Ringkasan Pesanan (Keranjang)</h2>
+        <ul id="cart-items">
+            <li id="empty-cart-message">Keranjang Anda kosong.</li>
+        </ul>
+        <hr style="border-color: var(--color-secondary); margin: 15px 0;">
+        
+        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
+            <span>Total Belanja:</span>
+            <span id="cart-total" style="color: var(--color-secondary);">Rp 0</span>
+        </div>
+
+        <button id="checkout-btn" class="luxe-button" style="width: 100%; margin-top: 20px;">Lanjutkan Pembayaran</button>
+    </div>
+</div>
+
+<div id="receipt-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 style="color: var(--color-primary); text-align: center; margin-bottom: 1rem;">Pembayaran Berhasil!</h2>
+        <p style="text-align: center; font-size: 1.1rem; color: #555;">Terima kasih atas pembelian Anda di Garasi Digital.</p>
+        <hr style="border-color: var(--color-secondary); margin: 20px 0;">
+        <div id="receipt-details">
+            </div>
+        <hr style="border-color: var(--color-secondary); margin: 20px 0;">
+        <p style="text-align: center; font-style: italic; font-size: 0.9rem;">Simpan struk ini sebagai bukti pembayaran Anda.</p>
+    </div>
+</div>
+    
+<footer class="luxe-footer">
+    <div class="container">
+         <p>Create by : Muhamad Miril Januarli.</p>
+        <p>&copy; 2024 Garasi Digital. Hak Dilindungi</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
